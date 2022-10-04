@@ -4,3 +4,4 @@ djangorestframework
 Pillow
 requests
 python-dateutil
+pyimgur
