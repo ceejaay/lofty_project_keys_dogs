@@ -19,6 +19,7 @@ imgur = pyimgur.Imgur("4f472bc818f1daf")
 def dog_preview(request, pk):
     dogs = DogImage.objects.get(pk=pk)
     context = {'dog_preview': [dogs]}
+    #here we need to get the alterd image link and data.
     # print(context)
     return render(request, 'doggos/preview.html', context)
 
@@ -38,6 +39,9 @@ class DogViewSet(viewsets.ModelViewSet):
             if not block:
                 break
             temp_file.write(block)
+    #in here we need to add the photo manipulation
+    # also get the metadata for the images.
+    # then save the 
 
         uploaded_dog = imgur.upload_image(temp_file.name)
         print(uploaded_dog.link)
