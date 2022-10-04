@@ -4,6 +4,6 @@ from rest_framework import serializers
 class DogSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DogImage
-        fields = ['img']
+        fields = ['url', 'duplicate_url', 'id', 'file_type', 'height', 'width', 'filename']
 
 

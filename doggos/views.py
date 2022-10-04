@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from doggos.models import DogImage
 from rest_framework import viewsets, permissions
+from rest_framework.response import Response
 from doggos.serializers import DogSerializer
 from django.views import generic
 from django.template import loader
@@ -11,6 +12,7 @@ import requests
 import tempfile
 import os
 import pyimgur
+from PIL import Image
 from django.core import files
 RANDOM = 'https://dog.ceo/api/breeds/image/random'
 
@@ -24,8 +26,8 @@ def dog_preview(request, pk):
     return render(request, 'doggos/preview.html', context)
 
 class DogViewSet(viewsets.ModelViewSet):
-    queryset = DogImage.objects.all()
     serializer_class = DogSerializer
+    new_dog = DogImage()
 
     def get_dog(self, request):
         response = requests.get(RANDOM).json()
@@ -34,24 +36,27 @@ class DogViewSet(viewsets.ModelViewSet):
         i = requests.get(dog_url, stream=True)
         if i.status_code == 200:
             temp_file = tempfile.NamedTemporaryFile()
-            print(vars(temp_file))
+            temp_file2 = tempfile.NamedTemporaryFile()
+
+
+
         for block in i.iter_content(1024 * 8):
             if not block:
                 break
             temp_file.write(block)
-    #in here we need to add the photo manipulation
-    # also get the metadata for the images.
-    # then save the 
+            temp_file2.write(block)
 
-        uploaded_dog = imgur.upload_image(temp_file.name)
-        print(uploaded_dog.link)
-        dog_img = DogImage()
-        file_name = f"new_dog{random.randint(0, 10000)}.jpg"
-        dog_img.img.save(file_name,  files.File(temp_file))
-        dog_img.url = uploaded_dog.link 
-        dog_img.save()
+        upload_dog1 = imgur.upload_image(temp_file.name)
+        upload_dog2 = imgur.upload_image(temp_file2.name)
+        new_dog = DogImage.objects.create(url=upload_dog1.link, duplicate_url=upload_dog2.link)
+        serialized = DogSerializer(new_dog)
+        return Response(serialized.data)
 
-        return HttpResponse(dog_img.id)
+
+
+
+
+
 
 
 
