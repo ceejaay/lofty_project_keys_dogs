@@ -13,7 +13,8 @@ import requests
 import tempfile
 import os
 import pyimgur
-from PIL import Image
+from PIL import Image, ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 from django.core import files
 RANDOM = 'https://dog.ceo/api/breeds/image/random'
 
@@ -30,9 +31,11 @@ class DogViewSet(viewsets.ModelViewSet):
     serializer_class = DogSerializer
 
     def get_dog(self, request):
+        #get a dog url from random
         response = requests.get(RANDOM).json()
         dog_url = response['message']
         new_dog = DogImage()
+        # use url from random to get a dog and download as temp file and write to file
         i = requests.get(dog_url, stream=True)
         try:
             if i.status_code == 200:
@@ -44,23 +47,21 @@ class DogViewSet(viewsets.ModelViewSet):
             if not block:
                 break
             temp_file.write(block)
-
+        # save the original to the model.
+        # save the duplicate to the model.
         file_name = f"dog_pic_{random.randint(0, 1000)}.jpg"
+        dup_dog_file = f"duplicate_dog{random.randint(0, 1000)}.jpg"
 
-        # new_dog.img.save(file_name, File(open(temp_file.name, 'rb')))
-        new_dog.altered_img.save(f"duplicate-{file_name}", File(open(temp_file.name, 'rb')))
+        new_dog.img.save(file_name, File(open(temp_file.name, 'rb')))
 
-        # with Image.open(new_dog.altered_img) as dog_pic:
-        #     dog_pic = dog_pic.convert("L")
-
+        with Image.open(temp_file.name) as dog_pic:
+            dog_pic = dog_pic.convert("L")
+            dog_pic = dog_pic.save(dup_dog_file)
+        upload_dog2= imgur.upload_image(dup_dog_file)
         upload_dog1 = imgur.upload_image(temp_file.name)
-        # upload_dog22= imgur.upload_image()
         new_dog.url = upload_dog1.link
+        new_dog.duplicate_url = upload_dog2.link
         new_dog.save()
-        # with Image.open(new_dog.img) as dog_pic:
-        #     dog_pic = dog_pic.convert("L")
-        #     print(vars(dog_pic))
-            # Image.save(dog_pic)
 
         serialized = DogSerializer(new_dog)
         return Response(serialized.data)
