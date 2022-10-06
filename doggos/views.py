@@ -50,7 +50,7 @@ class DogViewSet(viewsets.ModelViewSet):
         # save the original to the model.
         # save the duplicate to the model.
         file_name = f"dog_pic_{random.randint(0, 1000)}.jpg"
-        dup_dog_file = f"duplicate_dog{random.randint(0, 1000)}.jpg"
+        dup_dog_file = f"images/duplicate_dog{random.randint(0, 1000)}.jpg"
 
         new_dog.img.save(file_name, File(open(temp_file.name, 'rb')))
 
@@ -61,6 +61,9 @@ class DogViewSet(viewsets.ModelViewSet):
         upload_dog1 = imgur.upload_image(temp_file.name)
         new_dog.url = upload_dog1.link
         new_dog.duplicate_url = upload_dog2.link
+        new_dog.height = upload_dog2.height
+        new_dog.width = upload_dog2.width
+        new_dog.file_type = upload_dog2.type
         new_dog.save()
 
         serialized = DogSerializer(new_dog)
