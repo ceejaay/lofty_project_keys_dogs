@@ -1,6 +1,37 @@
-<h1>Hello world</h1>
+<style>
+   .column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+} 
+</style>
+<h1>Two Dog Pictures</h1>
 {% for d in  dog_preview %}
-<img src={{ d.url }}>
-<img src={{ d.duplicate_url }}>
+    {% if d.url and d.duplicate_url  %}
+    <div class="row">
+      <div class="column">
+        <img src={{ d.url }} alt="" style="width:100%">
+      </div>
+      <div class="column">
+          <img src={{ d.duplicate_url}} alt="" style="width:100%">
+      </div>
+      </div>
+    </div>
+      <div>
+          <p>Metadata</p>
+          <p>Height: {{ d.height  }}</p>
+          <p>Width: {{ d.width}}</p>
+          <p>File Type: {{ d.file_type }}</p>
+          <p>Original Imgur URL: <a href={{ d.url }}>Imgur Original</a></p>
+          <p>Altered Imgur URL: <a href={{ d.duplicate_url }}>Imgur Altered</a></p>
+  </div>
+    {% else %}
+     <p> Sorry no Dogs </p>
+    {% endif %}
 {% endfor %}
-

@@ -23,8 +23,6 @@ imgur = pyimgur.Imgur("4f472bc818f1daf")
 def dog_preview(request, pk):
     dogs = DogImage.objects.get(pk=pk)
     context = {'dog_preview': [dogs]}
-    #here we need to get the alterd image link and data.
-    # print(context)
     return render(request, 'doggos/preview.html', context)
 
 class DogViewSet(viewsets.ModelViewSet):
@@ -64,6 +62,7 @@ class DogViewSet(viewsets.ModelViewSet):
         new_dog.height = upload_dog2.height
         new_dog.width = upload_dog2.width
         new_dog.file_type = upload_dog2.type
+        new_dog.preview_link = f"http://localhost:8000/dogs/preview/{new_dog.id}"
         new_dog.save()
 
         serialized = DogSerializer(new_dog)

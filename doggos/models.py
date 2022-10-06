@@ -11,6 +11,7 @@ class DogImage(models.Model):
     duplicate_url = models.CharField(max_length=128, default='none')
 
     filename = models.CharField(max_length=128, default="none")
+    preview_link = models.CharField(max_length=128, default="none")
     height = models.IntegerField(default=100)
     width = models.IntegerField(default=100)
     file_type = models.CharField(max_length=32)
