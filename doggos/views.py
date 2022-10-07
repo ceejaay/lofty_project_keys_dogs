@@ -28,13 +28,9 @@ def dog_preview(request, pk):
 class DogViewSet(viewsets.ModelViewSet):
     serializer_class = DogSerializer
 
-    def get_dog(self, request):
-        #get a dog url from random
+    def get_images(self):
         response = requests.get(RANDOM).json()
-        dog_url = response['message']
-        new_dog = DogImage()
-        # use url from random to get a dog and download as temp file and write to file
-        i = requests.get(dog_url, stream=True)
+        i = requests.get(response['message'], stream=True)
         try:
             if i.status_code == 200:
                 temp_file = tempfile.NamedTemporaryFile()
@@ -45,16 +41,26 @@ class DogViewSet(viewsets.ModelViewSet):
             if not block:
                 break
             temp_file.write(block)
-        # save the original to the model.
-        # save the duplicate to the model.
-        file_name = f"dog_pic_{random.randint(0, 1000)}.jpg"
+        return temp_file
+
+
+
+    def alter_images(self, images):
         dup_dog_file = f"images/duplicate_dog{random.randint(0, 1000)}.jpg"
-
-        new_dog.img.save(file_name, File(open(temp_file.name, 'rb')))
-
-        with Image.open(temp_file.name) as dog_pic:
+        with Image.open(images.name) as dog_pic:
             dog_pic = dog_pic.convert("L")
             dog_pic = dog_pic.save(dup_dog_file)
+        return dup_dog_file
+
+
+    def get_dog(self, request):
+        temp_file = self.get_images()
+        new_dog = DogImage()
+
+        file_name = f"dog_pic_{random.randint(0, 1000)}.jpg"
+        new_dog.img.save(file_name, File(open(temp_file.name, 'rb')))
+        dup_dog_file = self.alter_images(temp_file) 
+
         upload_dog2= imgur.upload_image(dup_dog_file)
         upload_dog1 = imgur.upload_image(temp_file.name)
         new_dog.url = upload_dog1.link
