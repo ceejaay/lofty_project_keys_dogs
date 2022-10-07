@@ -1,9 +1,10 @@
 from django.test import TestCase
 from django.core.files import File
 from datetime import timedelta, date
+from PIL import Image, ImageChops
 import random
 import sys
-import pathlib
+import shutil
 import os
 from doggos.models import DogImage
 DOG_PIC = "images/test_doggy.jpg"
@@ -32,8 +33,15 @@ class DogImageTest(TestCase):
 
 
     def test_for_altered_photo(self):
-        altered_pic = DogImage()
-
+        original = "images/test_doggy.jpg"
+        shutil.copyfile(original, 'images/dup_doggy.jpg')
+        with Image.open('images/dup_doggy.jpg') as img:
+            img = img.convert("L")
+            img = img.save("images/dup_doggy.jpg")
+        img1 = Image.open(original)
+        img2 = Image.open("images/dup_doggy.jpg")
+        with self.assertRaises(ValueError):
+            ImageChops.difference(img1, img2)
 
     def test_for_uploaded_photo(self):
         pass
