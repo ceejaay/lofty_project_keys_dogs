@@ -19,6 +19,8 @@ from django.core import files
 RANDOM = 'https://dog.ceo/api/breeds/image/random'
 
 imgur = pyimgur.Imgur("4f472bc818f1daf")
+from faker import Faker 
+fake = Faker()
 
 def dog_preview(request, pk):
     dogs = DogImage.objects.get(pk=pk)
@@ -54,31 +56,31 @@ class DogViewSet(viewsets.ModelViewSet):
 
 
     def get_dog(self, request):
+        # get the dog pic 
         temp_file = self.get_images()
         new_dog = DogImage()
 
         file_name = f"dog_pic_{random.randint(0, 1000)}.jpg"
+        dog_name = fake.first_name()
         new_dog.img.save(file_name, File(open(temp_file.name, 'rb')))
+        # duplicate and alter the file
         dup_dog_file = self.alter_images(temp_file) 
 
-        upload_dog2= imgur.upload_image(dup_dog_file)
-        upload_dog1 = imgur.upload_image(temp_file.name)
+        # upload dog pics to host
+
+        upload_dog2= imgur.upload_image(dup_dog_file, title=f"B&W_{dog_name}")
+        upload_dog1 = imgur.upload_image(temp_file.name, title=dog_name)
+
+        # save new data to the object and save
         new_dog.url = upload_dog1.link
         new_dog.duplicate_url = upload_dog2.link
         new_dog.height = upload_dog2.height
         new_dog.width = upload_dog2.width
         new_dog.file_type = upload_dog2.type
         new_dog.preview_link = f"http://localhost:8000/dogs/preview/{new_dog.id}"
+        new_dog.filename=dog_name
         new_dog.save()
 
         serialized = DogSerializer(new_dog)
         return Response(serialized.data)
-
-
-
-
-
-
-
-
 # Create your views here.
