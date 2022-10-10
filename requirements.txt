@@ -6,3 +6,7 @@ requests
 python-dateutil
 pyimgur
 Faker
+django-environ
+locust
+celery
+redis==3.4.1

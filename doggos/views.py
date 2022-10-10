@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from doggos.serializers import DogSerializer
 from django.views import generic
 from django.template import loader
+from django.conf import settings
 import json
 import random
 import requests
@@ -18,8 +19,8 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 from django.core import files
 RANDOM = 'https://dog.ceo/api/breeds/image/random'
 
-imgur = pyimgur.Imgur("4f472bc818f1daf")
-from faker import Faker 
+imgur = pyimgur.Imgur(settings.IMGUR_KEY)
+from faker import Faker
 fake = Faker()
 
 def dog_preview(request, pk):

@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import environ
+env = environ.Env()
+environ.Env.read_env()
+
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,14 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+hw0#e(m8=ltekb5-hnpe8w@@98hh9@z-j5-+5dlswai0w8azb'
-
+SECRET_KEY = env('DJANGO_SECRET_KEY')
+IMGUR_KEY= env('IMGUR_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'
+# CELERY_RESULTS_BACKEND ='redis://redis:6379'
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +47,7 @@ INSTALLED_APPS = [
     'doggos',
     'rest_framework',
     'PIL',
+    'keys',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +93,49 @@ DATABASES = {
         'HOST': 'db',
         'PORT': 5432,
     }
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'root': {
+        'level': 'WARNING',
+        'handlers': ['file'],
+    },
+    'formatters': {
+        'verbose': { 'format': '%(levelname)s  %(module)s %(funcName)s ' '%(message)s'},
+        'testing_504': { 'format': '%(levelname)s %(asctime)s %(module)s %(lineno)s  %(message)s'},
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': f"{BASE_DIR}/time_log.log",
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'keys.views': {
+            'level': 'INFO', 
+            'handlers': ['file'], 
+            'propogate': False
+        },
+        'campaign.models': {
+            'level': 'INFO', 
+            'handlers': ['file'], 
+            'propogate': False
+        },
+    },
 }
 
 # Password validation
