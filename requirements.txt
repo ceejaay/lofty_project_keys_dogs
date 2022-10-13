@@ -10,3 +10,4 @@ django-environ
 locust
 celery
 redis==3.4.1
+django-celery-results

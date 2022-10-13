@@ -4,15 +4,16 @@ import logging
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.db import IntegrityError
+from django.db import IntegrityError, transaction
 
-# from celery import add
 
 from rest_framework import viewsets
 from rest_framework.response import Response
 
 from keys.serializers import KeySerializer
 from keys.models import Key
+from .tasks import get_key
+# transaction.on_commit(lambda: get_key.delay(pk=103))
 # Create your views here.
 
 logger = logging.getLogger(__name__)
@@ -63,14 +64,14 @@ class KeyViewSet(viewsets.ModelViewSet):
 
     def key_detail(self, request, pk):
         start_time = time.time()
-        body = json.loads(request.body)
         single_key = Key.objects.get(pk=pk)
+
         #get or 404
         if request.method == "GET":
-            serialized = KeySerializer(key)
+            serialized = KeySerializer(single_key)
             end_time = time.time()
             logger.info(f"Get single Key- {end_time - start_time}")
-            if end_time - start_time >=10:
+            if end_time - start_time >= 10:
                 logger.warning(f"Create time exceeds 10 {end_time - start_time}")
             return Response(serialized.data)
 
