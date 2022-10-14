@@ -99,3 +99,266 @@ INFO  views keys GET ALL KEYS 0.00019407272338867188
 INFO  views keys GET ALL KEYS 0.00019407272338867188
 INFO  views keys GET ALL KEYS 0.0002410411834716797
 INFO  views keys GET ALL KEYS 0.0002410411834716797
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR  redis on_connection_error Connection to Redis lost: Retry (0/20) now.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR  redis on_connection_error Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL  redis reconnect_on_error 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO  views keys GET ALL KEYS 0.00014901161193847656
+INFO  views keys GET ALL KEYS 0.00014901161193847656
+INFO  views keys GET ALL KEYS 0.00012040138244628906
+INFO  views keys GET ALL KEYS 0.00012040138244628906
+INFO  views key_detail Get single Key- 0.0158693790435791
+INFO  views key_detail Get single Key- 0.0158693790435791

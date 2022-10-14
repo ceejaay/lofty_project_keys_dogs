@@ -33,8 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# CELERY_BROKER_URL = 'redis://localhost:6379/0'
-# CELERY_RESULTS_BACKEND ='redis://redis:6379'
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULTS_BACKEND ='redis://localhost:6379'
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'PIL',
     'keys',
+    # 'django_celery_results',
 ]
 
 MIDDLEWARE = [
