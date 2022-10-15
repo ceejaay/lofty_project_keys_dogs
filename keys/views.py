@@ -13,6 +13,7 @@ from rest_framework.response import Response
 from keys.serializers import KeySerializer
 from keys.models import Key
 from .tasks import create_key
+from lofty_app.celery import debug_task
 
 logger = logging.getLogger(__name__)
 
@@ -24,10 +25,6 @@ class KeyViewSet(viewsets.ModelViewSet):
         return KeySerializer
 
     def keys(self, request):
-        #get all keys
-        # r = get_key.delay(6)
-        # print('this is the tase we are createsing ', r)
-
         start_time = time.time()
         if request.method == 'GET':
             all_keys = Key.objects.all()
@@ -41,27 +38,12 @@ class KeyViewSet(viewsets.ModelViewSet):
         if request.method == 'POST':
             create_start_time = time.time()
             body = json.loads(request.body)
-            new_key = Key()
-
-            if body.get('key') is not None:
-                new_key.key = body['key']
+            d = create_key(body)
+            if d['status'] == 200:
+                serialized = KeySerializer(d)
+                return Response(serialized.data)
             else:
-                return Response({'status': 400, 'message': "Must include key"})
-
-            if body.get('value') is not None:
-                new_key.value = body['value']
-
-            try:
-                new_key.save()
-            except IntegrityError as  e:
-                return Response({'status': 400, 'message': f"{e}"})
-
-            serialized = KeySerializer(new_key)
-            create_end_time = time.time()
-            logger.info(f"CREATE TIME { create_end_time - create_start_time }")
-            if create_end_time - create_start_time >=10:
-                logger.warning(f"Create time exceeds 10 {create_end_time - create_start_time}")
-            return Response(serialized.data)
+                return Response(d)
 
     def key_detail(self, request, pk):
         start_time = time.time()
