@@ -12,9 +12,7 @@ from rest_framework.response import Response
 
 from keys.serializers import KeySerializer
 from keys.models import Key
-from .tasks import get_key
-# transaction.on_commit(lambda: get_key.delay(pk=103))
-# Create your views here.
+from .tasks import create_key
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +25,9 @@ class KeyViewSet(viewsets.ModelViewSet):
 
     def keys(self, request):
         #get all keys
+        # r = get_key.delay(6)
+        # print('this is the tase we are createsing ', r)
+
         start_time = time.time()
         if request.method == 'GET':
             all_keys = Key.objects.all()

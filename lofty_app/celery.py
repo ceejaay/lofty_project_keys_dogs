@@ -2,7 +2,7 @@ from celery import Celery
 import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'lofty_app.settings')
 
-app = Celery('lofty_app', broker='redis://localhost:6379', backend="redis://localhost:6379")
+app = Celery('lofty_app', broker='redis://redis:6379', backend="redis://redis:6379")
 app.config_from_object('django.conf:settings', namespace="CELERY")
 app.autodiscover_tasks()
 

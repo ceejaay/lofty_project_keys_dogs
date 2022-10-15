@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_BROKER_URL = 'redis://redis:6379'
 CELERY_RESULTS_BACKEND ='redis://localhost:6379'
 # Application definition
 
