@@ -13,7 +13,6 @@ def add(x, y):
 
 @app.task()
 def create_key(key_object):
-    # time.sleep(random.randint(0, 30))
     new_key = Key()
     if key_object.get('key') is not None:
         new_key.key = key_object['key']
@@ -25,8 +24,8 @@ def create_key(key_object):
 
     try:
         new_key.save()
-        return {'key': new_key.key, 'value': new_key.value, 'status': 200}
+        return Response({'key': new_key.key, 'value': new_key.value, 'status': 200})
     except IntegrityError as  e:
-        return {'status': 400, 'message': f"{e}"}
+        return Response({'status': 400, 'message': f"{e}"})
 
 

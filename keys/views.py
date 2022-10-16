@@ -38,16 +38,16 @@ class KeyViewSet(viewsets.ModelViewSet):
         if request.method == 'POST':
             create_start_time = time.time()
             body = json.loads(request.body)
-            d = create_key(body)
-            if d['status'] == 200:
-                serialized = KeySerializer(d)
-                return Response(serialized.data)
-            else:
-                return Response(d)
+            celery_key = create_key(body)
+            try:
+                return celery_key
+            except:
+                Response({'status': 200, 'message': "Thank you.  Your request is processing"})
 
     def key_detail(self, request, pk):
         start_time = time.time()
         single_key = Key.objects.get(pk=pk)
+        body = json.loads(request.body)
 
         #get or 404
         if request.method == "GET":
@@ -64,11 +64,11 @@ class KeyViewSet(viewsets.ModelViewSet):
                 single_key.value = int(body['value']) + int(single_key.value)
                 single_key.save()
                 serialized = KeySerializer(single_key)
-                end_time = time.time()
-                logger.info(f"PUT key - { end_time - start_time }")
-                if end_time - start_time >=10:
-                    logger.warning(f"Create time exceeds 10 {end_time - start_time}")
-                return Response(serialized.data)
+                # end_time = time.time()
+                # logger.info(f"PUT key - { end_time - start_time }")
+                # if end_time - start_time >=10:
+                #     logger.warning(f"Create time exceeds 10 {end_time - start_time}")
+                return Response(serialized.data, status=201)
 
             else:
                 return Response({
