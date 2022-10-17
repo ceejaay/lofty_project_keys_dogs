@@ -1,49 +1,51 @@
 from django.test import TestCase
+from rest_framework.test import APIClient, APITestCase
 from django.core.files import File
 from datetime import timedelta, date
+from lofty_app import settings
 from PIL import Image, ImageChops
 import random
+import pyimgur
 import sys
 import shutil
 import os
 import tempfile
+
+
 from doggos.models import DogImage
-from doggos.views import DogViewSet as dogView
+from doggos.views import DogViewSet
 DOG_PIC = "images/test_doggy.jpg"
 # Create your tests here.
 
-class DogImageTest(TestCase):
+class DogImageTest(APITestCase):
 
     def setUp(self):
        self.new_pic = DogImage()
+       self.client = APIClient()
+       self.dog_view = DogViewSet()
+       self.imgur = pyimgur.Imgur(settings.IMGUR_KEY)
+
 
 
     def test_for_saved_photo(self):
-        new_dog_pic = f"saved_doggy{random.randint(0, 1000)}"
-        self.new_pic.img.save(new_dog_pic, File(open(DOG_PIC, 'rb')))
-        dog_from_db = DogImage.objects.last()
-        self.new_pic.height = 100
-        self.new_pic.width = 100
-        self.assertEqual("images/" + new_dog_pic, dog_from_db.img)
-        if os.path.isfile("images/" + new_dog_pic):
-            os.remove("images/" + new_dog_pic)
-        self.new_pic.save()
-        self.assertEqual(dog_from_db.height, 100)
-        self.assertEqual(dog_from_db.width, 100)
-
-
+        dogs = self.client.get('/dogs/', format='json')
+        self.assertEqual(dogs.status_code, 200)
+        new_dog = DogImage.objects.last()
+        #not sure what to test here
 
 
     def test_for_altered_photo(self):
-        pass
-        # temp_file = dogView.get_images()
+        self.client.get('/dogs/', format="json")
+        two_dogs = DogImage.objects.last()
+        img1 = two_dogs.url
+        img2 = two_dogs.duplicate_url
+        print(img1, img2)
+        # i = self.imgur.get_image(img1)
+        
 
 
-
-            # altered_image = dogView.alter_images(img)
-            # print(altered_image)
-            # img = img.convert("L")
-            # img = img.save("images/dup_doggy.jpg")
+        # img = img.convert("L")
+        # img = img.save("images/dup_doggy.jpg")
         # img1 = Image.open(original)
         # img2 = Image.open("images/dup_doggy.jpg")
         # with self.assertRaises(ValueError):
