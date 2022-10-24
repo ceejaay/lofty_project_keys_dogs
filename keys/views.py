@@ -12,7 +12,7 @@ from rest_framework.response import Response
 
 from keys.serializers import KeySerializer
 from keys.models import Key
-from .tasks import get_key
+# from .tasks import get_key
 # transaction.on_commit(lambda: get_key.delay(pk=103))
 # Create your views here.
 
@@ -65,6 +65,7 @@ class KeyViewSet(viewsets.ModelViewSet):
     def key_detail(self, request, pk):
         start_time = time.time()
         single_key = Key.objects.get(pk=pk)
+        body = json.loads(request.body)
 
         #get or 404
         if request.method == "GET":
