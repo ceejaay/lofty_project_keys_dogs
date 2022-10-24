@@ -2,7 +2,7 @@ import time
 import json
 import logging
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.db import IntegrityError, transaction
 
@@ -64,7 +64,7 @@ class KeyViewSet(viewsets.ModelViewSet):
 
     def key_detail(self, request, pk):
         start_time = time.time()
-        single_key = Key.objects.get(pk=pk)
+        single_key = get_object_or_404(Key, pk=pk)
         body = json.loads(request.body)
 
         #get or 404

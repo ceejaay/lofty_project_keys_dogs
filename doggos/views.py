@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from doggos.models import DogImage
 from rest_framework import viewsets, permissions
 from django.core.files import File
@@ -24,7 +24,7 @@ from faker import Faker
 fake = Faker()
 
 def dog_preview(request, pk):
-    dogs = DogImage.objects.get(pk=pk)
+    dogs = get_object_or_404(DogImage, pk=pk)
     context = {'dog_preview': [dogs]}
     return render(request, 'doggos/preview.html', context)
 
